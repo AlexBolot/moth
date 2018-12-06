@@ -7,18 +7,18 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { IndexComponent } from './index/index.component';
-
-
+import { MaterialModule } from './material-module';
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
     HeaderComponent,
-    SideNavComponent
+    SideNavComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],

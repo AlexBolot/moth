@@ -5,7 +5,6 @@ import 'package:moth/models/task.dart';
 import 'package:moth/services/task_service.dart';
 import 'package:moth/user_interfaces/others/app_builder.dart';
 import 'package:moth/user_interfaces/pages/health_page.dart';
-import 'package:moth/user_interfaces/pages/map_page.dart';
 import 'package:moth/user_interfaces/pages/notifications_page.dart';
 import 'package:moth/user_interfaces/pages/tasks_page.dart';
 import 'package:moth/user_interfaces/pages/dash_board.dart';
@@ -29,7 +28,6 @@ class MyApp extends StatelessWidget {
             dashboard: (context) => DashBoard(),
             healthPage: (context) => HealthPage(),
             tasksPage: (context) => TasksPage(),
-            mapPage: (context) => MapPage(),
             notificationsPage: (context) => NotificationsPage(),
           },
         );

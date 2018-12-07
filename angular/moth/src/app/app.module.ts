@@ -16,6 +16,7 @@ import { RoundProgressbarComponent } from './components/round-progressbar/round-
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { IndexComponent } from './index/index.component';
 import { MaterialModule } from './material-module';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { MaterialModule } from './material-module';
     MatMenuModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {Chatbot} from './chatbot';
-import {ChatBotService} from '../../services/chat-bot.service';
+import { Component, OnInit } from '@angular/core';
+import { Chatbot } from './chatbot';
+import { ChatBotService } from '../../services/chat-bot.service';
 
 @Component({
   selector: 'app-chatbot',
@@ -35,5 +35,10 @@ export class ChatbotComponent implements OnInit {
     console.log(this.chatbot.historique);
   }
 
+  onKeydown(event, currentQuestion) {
+    if (event.key === "Enter" && currentQuestion != '...') {
+      this.sendMessage(currentQuestion);
+    }
+  }
 
 }

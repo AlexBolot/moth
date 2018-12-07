@@ -13,7 +13,7 @@
     <h1>Votre chatbot</h1>
   </div>
 
-  <div class="message-list" *ngFor="let string of chatbot.getLastTen()">
+  <div class="message-list" *ngFor="let string of chatbot.getLastThree()">
     {{string}}
     <br>
   </div>

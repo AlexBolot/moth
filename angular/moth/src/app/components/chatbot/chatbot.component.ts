@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Chatbot } from './chatbot';
+import { ChatBotService } from '../../services/chat-bot.service'
 
 @Component({
   selector: 'app-chatbot',
@@ -9,18 +10,14 @@ import { Chatbot } from './chatbot';
 })
 
 export class ChatbotComponent implements OnInit {
-  chatbot: Chatbot = {
-    name: 'Kitler',
-    currentQuestion: 'Bonjour',
-    historique: [],
-    currentReponse: ""
-  }
+  chatbot: Chatbot;
   initConv = false;
 
-  constructor() {
-    this.chatbot = new Chatbot();
+  constructor(private chatBotService: ChatBotService) {
+    this.chatbot = new Chatbot(chatBotService);
     this.chatbot.name = 'Hrmmf';
     this.chatbot.historique = [];
+    this.chatbot.historique.push("Bonjour, je suis " + this.chatbot.name + ", votre assistant personnel. Libre à vous de me poser des questions. Libre à moi d'y répondre...")
   }
 
   ngOnInit() {
@@ -30,6 +27,7 @@ export class ChatbotComponent implements OnInit {
     this.chatbot.historique.push(question);
     this.chatbot.answer();
     this.chatbot.currentQuestion = "";
+    console.log(this.chatbot.historique);
   }
 
 

@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>I'm a chat bot</h1>
+  <div *ngFor="let string of chatbot.getLastTen()">
+    {{string}}
+  </div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="
+    chatbot.currentQuestion" placeholder="Pose ta question, je suis là pour toi :3">
+    </label>
+    <button type="submit" (click)="sendMessage(chatbot.currentQuestion)">Envoyer</button>
+  </div>
+</div>

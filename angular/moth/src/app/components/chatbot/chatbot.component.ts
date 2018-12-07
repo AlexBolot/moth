@@ -26,7 +26,7 @@ export class ChatbotComponent implements OnInit {
   }
 
   changeImg() {
-    this.img = ++this.img % 4;
+    this.img = ++this.img % 5;
   }
 
   sendMessage(question: string) {

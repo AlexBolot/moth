@@ -1,0 +1,8 @@
+<div>
+  <mat-card *ngFor="let task of (tasks| async)" style="margin-top: 16px; margin-left: 16px; margin-right: 16px;">
+    <mat-card-content>
+      <mat-checkbox [checked]="task.isDone" (change)="onChange(task)">Check me!</mat-checkbox>
+      <h4>{{task.text}}</h4>
+    </mat-card-content>
+  </mat-card>
+</div>

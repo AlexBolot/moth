@@ -1,13 +1,33 @@
-<div class="container">
-  <img src="../../../resources/47575919_296163091014852_1509605524788740096_n.png"/>
-  <div *ngFor="let string of chatbot.getLastTen()">
+<div class="container chat-container">
+  <div class="chatBotTitle">
+    <img *ngIf="img == 0" (click)="changeImg()" src="assets/resources/chatbot-basic.png" alt="basic_bot"
+      title="Chatbot" style="width:80px;">
+    <img *ngIf="img == 1" (click)="changeImg()" src="assets/resources/chatbot-halloween.png" alt="halloween_bot"
+      title="Halloween Chatbot" style="width:80px;">
+    <img *ngIf="img == 2" (click)="changeImg()" src="assets/resources/chatbot-moustache.png" alt="moustache_bot"
+      title="Moustache Chatbot" style="width:80px;">
+    <img *ngIf="img == 3" (click)="changeImg()" src="assets/resources/chatbot-nuitdelinfo.png" alt="nuit_de_l_info_bot"
+      title="Nuit de l'info Chatbot" style="width:80px;">
+    <img *ngIf="img == 4" (click)="changeImg()" src="assets/resources/chatbot-xmas.png" alt="xmas_bot"
+      title="Christmas Chatbot" style="width:80px;">
+    <h1>Votre chatbot</h1>
+  </div>
+
+  <div class="message-list" *ngFor="let string of chatbot.getLastTen()">
     {{string}}
+    <br>
   </div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="
-    chatbot.currentQuestion" placeholder="Pose ta question, je suis là pour toi :3">
+
+  <div class="message-box">
+    <label>
+      <mat-form-field>
+        <input [(ngModel)]="
+chatbot.currentQuestion" (keydown)="onKeydown($event, chatbot.currentQuestion)"
+          matInput placeholder="Posez votre question." value="...">
+      </mat-form-field>
     </label>
-    <button type="submit" (click)="sendMessage(chatbot.currentQuestion)">Envoyer</button>
+
+    <button mat-raised-button color="primary" type="submit" (click)="sendMessage(chatbot.currentQuestion)">Envoyer</button>
   </div>
+
 </div>

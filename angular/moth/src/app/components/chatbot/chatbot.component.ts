@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chatbot } from './chatbot';
 import { ChatBotService } from '../../services/chat-bot.service';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-chatbot',

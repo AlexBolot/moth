@@ -1,0 +1,22 @@
+import 'package:flutter/material.dart';
+
+class MapPage extends StatefulWidget {
+
+  static const String path = '/MapPage';
+
+  @override
+  _MapPageState createState() => _MapPageState();
+}
+
+class _MapPageState extends State<MapPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container (
+        child : Center (
+          child : Text(MapPage.path),
+        ),
+      ),
+    );
+  }
+}

@@ -1,4 +1,4 @@
-package moth.moth;
+package n2i.moth;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

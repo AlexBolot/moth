@@ -1,3 +1,4 @@
+import { CardTimeLeftComponent } from './components/card-time-left/card-time-left.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
@@ -24,7 +25,6 @@ import {
   MatTableModule,
   MatToolbarModule
 } from '@angular/material';
-import { TableComponent } from './components/table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ChatbotComponent,
     SidebarComponent,
     DashboardComponent,
-    TableComponent
+    CardTimeLeftComponent
   ],
   imports: [
     BrowserModule,

@@ -21,6 +21,7 @@ class CircleButton extends StatelessWidget {
           child: Icon(
             iconData ?? Icons.crop_free,
             size: size / 2,
+            color: Theme.of(context).iconTheme.color,
           )
       ),
     );

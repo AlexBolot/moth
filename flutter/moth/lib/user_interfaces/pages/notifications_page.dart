@@ -28,6 +28,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(title: Text('Notifications')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

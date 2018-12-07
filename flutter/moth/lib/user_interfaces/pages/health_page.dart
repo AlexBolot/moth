@@ -44,8 +44,13 @@ class _HealthPageState extends State<HealthPage> with SingleTickerProviderStateM
   @override
   Widget build(BuildContext context) {
     updateFrequence();
+
+    ThemeData theme = Theme.of(context);
+    Color textColor = theme.textTheme.title.color;
+
     return Scaffold(
-      appBar: AppBar(title: Text('Health Page')),
+      backgroundColor: theme.backgroundColor,
+      appBar: AppBar(title: Text('Health Page', style: Theme.of(context).textTheme.title)),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -60,7 +65,7 @@ class _HealthPageState extends State<HealthPage> with SingleTickerProviderStateM
                   children: <Widget>[
                     ScaleTransition(
                         scale: animationHeart, child: Icon(Icons.favorite, size: 70.0, color: Colors.redAccent)),
-                    Text('$heartBeat bmp', style: TextStyle(fontSize: 30.0)),
+                    Text('$heartBeat bmp', style: TextStyle(fontSize: 30.0, color: textColor)),
                   ],
                 ),
               ),
@@ -77,8 +82,8 @@ class _HealthPageState extends State<HealthPage> with SingleTickerProviderStateM
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
-                            Icon(Icons.brightness_low, size: 40.0),
-                            Text('$temperature°C', style: TextStyle(fontSize: 25.0)),
+                            Icon(Icons.brightness_low, size: 40.0, color: Theme.of(context).iconTheme.color),
+                            Text('$temperature°C', style: TextStyle(fontSize: 25.0, color: textColor)),
                           ],
                         ),
                       ),
@@ -92,8 +97,12 @@ class _HealthPageState extends State<HealthPage> with SingleTickerProviderStateM
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
-                            Icon(Icons.filter_drama, size: 40.0),
-                            Text('$humidity%', style: TextStyle(fontSize: 25.0)),
+                            Icon(
+                              Icons.filter_drama,
+                              size: 40.0,
+                              color: Theme.of(context).iconTheme.color,
+                            ),
+                            Text('$humidity%', style: TextStyle(fontSize: 25.0, color: textColor)),
                           ],
                         ),
                       ),
@@ -110,7 +119,7 @@ class _HealthPageState extends State<HealthPage> with SingleTickerProviderStateM
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Icon(Icons.directions_run, size: 70.0, color: Colors.green[800]),
-                    Text('$stepsCount steps', style: TextStyle(fontSize: 30.0)),
+                    Text('$stepsCount steps', style: TextStyle(fontSize: 30.0, color: textColor)),
                   ],
                 ),
               ),

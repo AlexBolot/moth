@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moth/global/router.dart';
 import 'package:moth/global/shared.dart';
-import 'package:moth/models/task.dart';
 import 'package:moth/services/task_service.dart';
 import 'package:moth/user_interfaces/others/app_builder.dart';
 import 'package:moth/user_interfaces/pages/health_page.dart';
@@ -14,8 +13,17 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    TaskService.streamAllTasks();
 
-    TaskService().streamAllTasks();
+    int currentHour = DateTime.now().hour;
+
+    if (currentHour > 20 || currentHour < 8) {
+      Shared.selectLastTheme();
+      // AppBuilder.of(context).rebuild();
+    } else {
+      Shared.selectFirstTheme();
+      // AppBuilder.of(context).rebuild();
+    }
 
     return AppBuilder(
       builder: (context) {

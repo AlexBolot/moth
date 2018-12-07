@@ -11,18 +11,22 @@ class TasksPage extends StatefulWidget {
 }
 
 class _TasksPageState extends State<TasksPage> {
-  TaskService taskService = TaskService();
-  List<Task> tasks = [];
+  List<Task> tasks = TaskService.tasks;
 
   @override
   void initState() {
-    taskService.listenToTasks(() => setState(() => tasks = taskService.tasks));
+    TaskService.listenToTasks(() => setState(() => tasks = TaskService.tasks));
+    tasks = TaskService.tasks;
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+
+    print(tasks.length);
+
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(title: Text('Tasks')),
       body: Container(
         child: ListView.builder(
@@ -37,7 +41,7 @@ class _TasksPageState extends State<TasksPage> {
                 onChange: (val) {
                   setState(() {
                     task.isDone = val;
-                    taskService.updateTask(task);
+                    TaskService.updateTask(task);
                   });
                 },
               ),

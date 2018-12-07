@@ -7,19 +7,19 @@ class TaskService {
 
   static Stream<QuerySnapshot> tasksStream;
 
-  List<Task> tasks = [];
+  static List<Task> tasks = [];
 
-  String tasksPath = 'Tasks';
+  static const String tasksPath = 'Tasks';
 
-  addTasks(List<Task> tasks) {
+  static addTasks(List<Task> tasks) {
     for (Task task in tasks) {
       _firestore.collection(tasksPath).document().setData(task.toMap());
     }
   }
 
-  streamAllTasks() => tasksStream = _firestore.collection(tasksPath).snapshots();
+  static streamAllTasks() => tasksStream = _firestore.collection(tasksPath).snapshots();
 
-  listenToTasks(VoidCallback notify) {
+  static listenToTasks(VoidCallback notify) {
     tasksStream?.listen((snap) {
       tasks.clear();
       for (DocumentSnapshot doc in snap.documents) {
@@ -29,5 +29,5 @@ class TaskService {
     });
   }
 
-  updateTask(Task task) => _firestore.collection(tasksPath).document(task.id).setData(task.toMap());
+  static updateTask(Task task) => _firestore.collection(tasksPath).document(task.id).setData(task.toMap());
 }

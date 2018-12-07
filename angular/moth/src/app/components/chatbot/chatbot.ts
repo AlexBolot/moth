@@ -58,11 +58,11 @@ export class Chatbot {
       }
     }
 
-    if (question.includes('ou suis je ?') || question.includes('où suis-je ?') || question.includes('où suis je ?')) {
+    if (question.includes('ou suis je') || question.includes('où suis-je') || question.includes('où suis je')) {
       reponse = 'J\'aurais pensé qu\'une personne envoyée dans un endroit aux conditions aussi extrêmes soit au moins au courant de là où il est... Mais soit, voici votre position sur la carte:\n';
     }
 
-    if (question.includes('ou suis je ?') || question.includes('où suis-je ?') || question.includes('où suis je ?')) {
+    if (question.includes('ou suis je') || question.includes('où suis-je') || question.includes('où suis je')) {
       reponse = 'J\'aurais pensé qu\'une personne envoyée dans un endroit aux conditions aussi extrêmes soit au moins au courant de là où il est... Mais soit, voici votre position sur la carte:\n';
     }
 
@@ -70,7 +70,7 @@ export class Chatbot {
       reponse = 'Vous avez un calendrier installé sur votre ordinateur non ?\nNous sommes le ' + formatDate(now, 'dd:mm:aaaa', 'en-US');
     }
 
-    if (question.includes('qui es tu ?') || question.includes('qu\'es tu ?') || question.includes('qu\'êtes vous ?') || question.includes('qui êtes vous ?')) {
+    if (question.includes('qui es-tu') || question.includes('qu\'es-tu') || question.includes('qu\'êtes-vous') || question.includes('qui êtes-vous')) {
       let random = Math.floor(Math.random() * 6);
       switch (random) {
         case 0:
@@ -128,7 +128,7 @@ export class Chatbot {
       reponse = 'Voulez vous que je vous redirige vers vos tâches ? (Non fonctionnel)';
     }
 
-    if (question.includes('es-tu un bot ?') || question.includes('est-tu réel ?')) {
+    if (question.includes('es-tu un bot') || question.includes('est-tu réel')) {
       reponse = 'Mon protocole me force à vous révéler que je suis un être virtuel dont les réponses sont programmées.\n' +
         '...\n' +
         '...\n' +

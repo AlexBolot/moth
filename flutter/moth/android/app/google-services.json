@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "347480513565",
+    "firebase_url": "https://projetn2i-moth.firebaseio.com",
+    "project_id": "projetn2i-moth",
+    "storage_bucket": "projetn2i-moth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:347480513565:android:ab2d78c52acb6ca3",
+        "android_client_info": {
+          "package_name": "n2i.moth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "347480513565-v7tnobi9o0q9oimom7fg9smo1jgmp1c9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "n2i.moth",
+            "certificate_hash": "5dc52bd15539abc265eeaea4166d5e5763f85bd5"
+          }
+        },
+        {
+          "client_id": "347480513565-job50mrs37s5a47f271eeljugpagr9cm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeMG4GnkiDuDlF1plfTWgF7vv9mxAGl_8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "347480513565-job50mrs37s5a47f271eeljugpagr9cm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

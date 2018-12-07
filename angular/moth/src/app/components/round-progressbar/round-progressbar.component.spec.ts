@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CardTimeLeftComponent } from './card-time-left.component';
+import { RoundProgressbarComponent } from './round-progressbar.component';
 
-describe('CardTimeLeftComponent', () => {
-  let component: CardTimeLeftComponent;
-  let fixture: ComponentFixture<CardTimeLeftComponent>;
+describe('RoundProgressbarComponent', () => {
+  let component: RoundProgressbarComponent;
+  let fixture: ComponentFixture<RoundProgressbarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardTimeLeftComponent ]
+      declarations: [ RoundProgressbarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CardTimeLeftComponent);
+    fixture = TestBed.createComponent(RoundProgressbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

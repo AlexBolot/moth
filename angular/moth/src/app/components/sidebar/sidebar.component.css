@@ -30,3 +30,9 @@ a:nth-child(3) {
 a:nth-child(5) {
   background: #eb9898;
 }
+
+round-progressbar {
+  bottom: 0;
+  position: absolute;
+  width: -webkit-fill-available;
+}

@@ -8,13 +8,42 @@ class HealthPage extends StatefulWidget {
 }
 
 class _HealthPageState extends State<HealthPage> with SingleTickerProviderStateMixin {
-  int heartBeat = 80;
+  int heartBeat = 85;
   double temperature = 70.0;
   int humidity = 5;
   int stepsCount = 1843;
 
+  Animation<double> animationHeart;
+  AnimationController controllerHeart;
+
+  @override
+  void initState() {
+    super.initState();
+    controllerHeart = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 800),
+      lowerBound: 0.3,
+      upperBound: 1.0,
+    );
+    controllerHeart.repeat();
+    animationHeart = CurvedAnimation(parent: controllerHeart, curve: Curves.linear);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    controllerHeart.dispose();
+  }
+
+  updateFrequence() {
+    int frequence = (60 / heartBeat * 1000).round();
+    print(frequence);
+    controllerHeart.duration = Duration(milliseconds: frequence);
+  }
+
   @override
   Widget build(BuildContext context) {
+    updateFrequence();
     return Scaffold(
       appBar: AppBar(title: Text('Health Page')),
       body: Padding(
@@ -29,7 +58,8 @@ class _HealthPageState extends State<HealthPage> with SingleTickerProviderStateM
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Icon(Icons.favorite, size: 70.0, color: Colors.redAccent),
+                    ScaleTransition(
+                        scale: animationHeart, child: Icon(Icons.favorite, size: 70.0, color: Colors.redAccent)),
                     Text('$heartBeat bmp', style: TextStyle(fontSize: 30.0)),
                   ],
                 ),

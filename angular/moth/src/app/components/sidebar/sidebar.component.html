@@ -1,0 +1,21 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="primary">MOTH</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">TASKS</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item href="#">MANAGE STOCK</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item href="#">PARAMATERS</a>
+      <mat-divider></mat-divider>
+      <app-card-time-left></app-card-time-left>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <h1 class="mat-h1">Dashboard</h1>
+    </mat-toolbar>
+    <app-dashboard></app-dashboard>
+  </mat-sidenav-content>
+</mat-sidenav-container>

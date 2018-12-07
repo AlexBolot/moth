@@ -1,8 +1,6 @@
 import { isNullOrUndefined } from 'util';
 import { ChatBotService } from 'src/app/services/chat-bot.service';
-import { OnInit } from '@angular/core';
 import { formatDate } from '@angular/common';
-import { exists } from 'fs';
 
 
 export class Chatbot {

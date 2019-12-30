@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chatbot } from './chatbot';
 import { ChatBotService } from '../../services/chat-bot.service';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-chatbot',
@@ -25,7 +26,7 @@ export class ChatbotComponent implements OnInit {
   }
 
   changeImg() {
-    this.img = ++this.img % 4;
+    this.img = ++this.img % 5;
   }
 
   sendMessage(question: string) {

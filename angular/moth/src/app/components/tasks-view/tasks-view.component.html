@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-               [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(async) ? 'dialog' : 'navigation'"
+    [mode]="(async) ? 'over' : 'side'" [opened]="!(async)">
     <mat-toolbar color="primary">MOTH</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="/tasks">TASKS</a>
@@ -10,7 +10,7 @@
       <a mat-list-item href="#">PARAMATERS</a>
       <mat-divider></mat-divider>
       <round-progressbar [title]="'DAYS LEFT'" [current]="'23'" [end]="'100'" [background]="'#FFF968'"
-                         [color]="'#26A69A'" [boxcolor]="'#7986CB'"></round-progressbar>
+        [color]="'#26A69A'" [boxcolor]="'#7986CB'"></round-progressbar>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

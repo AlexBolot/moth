@@ -12,21 +12,18 @@
       title="Christmas Chatbot" style="width:80px;">
     <h1>Votre chatbot</h1>
   </div>
-
-  <div class="message-list" *ngFor="let string of chatbot.getLastTen()">
-    {{string}}
-    <br>
+  <div class="message-list">
+    <div style="padding: 2px;" *ngFor="let string of chatbot.getLastTen()">
+      {{string}}
+    </div>
   </div>
 
   <div class="message-box">
-    <label>
-      <mat-form-field>
-        <input [(ngModel)]="
+    <mat-form-field>
+      <input [(ngModel)]="
 chatbot.currentQuestion" (keydown)="onKeydown($event, chatbot.currentQuestion)"
-          matInput placeholder="Posez votre question." value="...">
-      </mat-form-field>
-    </label>
-
+        matInput placeholder="Posez votre question." value="...">
+    </mat-form-field>
     <button mat-raised-button color="primary" type="submit" (click)="sendMessage(chatbot.currentQuestion)">Envoyer</button>
   </div>
 
